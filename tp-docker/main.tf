@@ -1,5 +1,5 @@
 resource "docker_image" "nginx" {
-  name = var.redis_image
+  name = "nginx:alpine"
 }
 
 resource "docker_network" "app" {
@@ -19,7 +19,7 @@ resource "docker_container" "web" {
 }
 
 resource "docker_image" "redis" {
-  name = "redis:alpine"
+  name = var.redis_image
 }
 
 resource "docker_container" "redis" {
