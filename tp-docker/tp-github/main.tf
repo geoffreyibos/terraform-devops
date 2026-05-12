@@ -20,3 +20,7 @@ resource "github_actions_secret" "db_url" {
  secret_name = "DATABASE_URL"
  plaintext_value = var.db_url
 }
+
+resource "github_repository" "existing" {
+ name = "tp-terraform-test-import"
+}
