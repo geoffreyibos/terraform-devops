@@ -3,8 +3,16 @@ variable "project_name" {
   type        = string
   default     = "tp-terraform"
 }
+
 variable "host_port" {
   description = "Port sur la machine hôte"
   type        = number
   default     = 8080
 }
+
+variable "redis_image" {
+  description = "Image Docker Redis"
+  type        = string
+  default     = "redis:alpine"
+}
+
