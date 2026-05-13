@@ -3,6 +3,7 @@ resource "github_repository" "app" {
   description = "Dépôt géré par Terraform - DevOps 4A"
   visibility  = "public"
   has_issues  = true
+  topics      = ["terraform", "devops"]
   auto_init   = true # Initialise avec un README
 }
 
@@ -23,4 +24,18 @@ resource "github_actions_secret" "db_url" {
 
 resource "github_repository" "existing" {
   name = "tp-terraform-test-import"
+}
+
+resource "github_repository" "app_secondary" {
+  name        = "${var.project_name}-secondary"
+  description = "Deuxième dépôt géré par Terraform"
+  visibility  = "public"
+
+  has_issues   = true
+  has_wiki     = false
+  has_projects = false
+
+  topics = ["terraform", "devops"]
+
+  auto_init = true
 }
